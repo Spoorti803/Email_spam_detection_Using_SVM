@@ -1,0 +1,469 @@
+/* General Styles */
+body {
+    background-color: #f8f9fa;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  h1, h2 {
+    color: #343a40;
+  }
+  
+  nav a {
+    color: #007bff;
+    text-decoration: none;
+    padding: 0.5rem;
+  }
+  
+  nav a:hover {
+    text-decoration: underline;
+  }
+  
+  hr {
+    border: 1px solid #dee2e6;
+  }
+  
+  /* Login and Signup Pages */
+  form {
+    max-width: 400px;
+    margin: 2rem auto;
+    padding: 1.5rem;
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    background-color: #ffffff;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  form input {
+    width: 100%;
+    padding: 0.75rem;
+    margin: 0.5rem 0;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+  }
+  
+  form button {
+    width: 100%;
+    padding: 0.75rem;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+  }
+  
+  form button:hover {
+    background-color: #0056b3;
+  }
+  
+  form p {
+    text-align: center;
+    margin-top: 1rem;
+  }
+  
+  /* Home Page */
+  .home-container {
+    padding: 2rem;
+  }
+  
+  .home-container nav {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1rem;
+  }
+  
+  .home-container nav a {
+    margin: 0 1rem;
+    font-weight: bold;
+  }
+  
+  /* Inbox, Sent, Spam */
+  .email-list {
+    margin: 2rem auto;
+    max-width: 600px;
+    list-style: none;
+    padding: 0;
+  }
+  
+  .email-list li {
+    background-color: white;
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .email-list li strong {
+    color: #495057;
+  }
+  
+  /* Create Mail */
+  .create-mail-container {
+    max-width: 600px;
+    margin: 2rem auto;
+    padding: 2rem;
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    background-color: #ffffff;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .create-mail-container input,
+  .create-mail-container textarea {
+    width: 100%;
+    padding: 0.75rem;
+    margin: 0.5rem 0;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+  }
+  
+  .create-mail-container button {
+    width: 100%;
+    padding: 0.75rem;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+  }
+  
+  .create-mail-container button:hover {
+    background-color: #218838;
+  }
+  
+  /* Loading and Error Messages */
+  p {
+    color: #6c757d;
+    text-align: center;
+  }
+  
+  .error-message {
+    color: red;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 1rem;
+  }
+/* CreateMail Component Styles */
+.create-mail-container {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.create-mail-container h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.create-mail-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.create-mail-form input,
+.create-mail-form textarea,
+.create-mail-form button {
+  font-size: 1rem;
+  padding: 12px;
+  margin: 10px 0;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  transition: border-color 0.3s ease;
+}
+
+.create-mail-form input:focus,
+.create-mail-form textarea:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+.create-mail-form input {
+  height: 40px;
+}
+
+.create-mail-form textarea {
+  resize: vertical;
+  min-height: 150px;
+}
+
+.create-mail-form button {
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+  border: none;
+  padding: 12px;
+  font-size: 1.1rem;
+  transition: background-color 0.3s ease;
+}
+
+.create-mail-form button:hover {
+  background-color: #0056b3;
+}
+
+.create-mail-form .input-label {
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.create-mail-form .form-group {
+  margin-bottom: 20px;
+}
+
+.create-mail-form .error-message {
+  color: red;
+  font-size: 0.9rem;
+  margin-top: -10px;
+  text-align: center;
+}
+
+.create-mail-form .form-footer {
+  text-align: center;
+}
+
+.create-mail-form .form-footer a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.create-mail-form .form-footer a:hover {
+  text-decoration: underline;
+}
+/* Spam Component Styles */
+.spam-container {
+  padding: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.spam-container h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.spam-container .error-message {
+  color: red;
+  font-size: 1rem;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.spam-container .loading-message {
+  text-align: center;
+  font-size: 1.2rem;
+}
+
+.spam-email-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.spam-email-item {
+  border: 1px solid #ccc;
+  margin-bottom: 10px;
+  padding: 15px;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  transition: background-color 0.3s ease;
+}
+
+.spam-email-item:hover {
+  background-color: #f0f0f0;
+}
+
+.spam-email-item p {
+  margin: 5px 0;
+}
+
+.spam-email-item p strong {
+  font-weight: bold;
+}
+
+.spam-email-item p span {
+  color: #777;
+}
+
+.no-spam-message {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #666;
+}
+/* Sent Emails Component Styles */
+.sent-container {
+  padding: 20px;
+  max-width: 900px;
+  margin: 0 auto;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.sent-container h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.sent-container .loading-message {
+  text-align: center;
+  font-size: 1.2rem;
+}
+
+.sent-container .email-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.sent-container .email-item {
+  border: 1px solid #ccc;
+  margin-bottom: 15px;
+  padding: 15px;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  transition: background-color 0.3s ease;
+}
+
+.sent-container .email-item:hover {
+  background-color: #f0f0f0;
+}
+
+.sent-container .email-item p {
+  margin: 5px 0;
+}
+
+.sent-container .email-item strong {
+  color: #333;
+}
+
+.sent-container .email-item .timestamp {
+  font-size: 0.9rem;
+  color: #777;
+}
+
+.sent-container .no-emails-message {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #666;
+}
+/* Inbox Component Styles */
+.inbox-container {
+  padding: 20px;
+  max-width: 900px;
+  margin: 0 auto;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.inbox-container h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.inbox-container .loading-message {
+  text-align: center;
+  font-size: 1.2rem;
+}
+
+.inbox-container .email-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.inbox-container .email-item {
+  border: 1px solid #ccc;
+  margin-bottom: 15px;
+  padding: 15px;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  transition: background-color 0.3s ease;
+}
+
+.inbox-container .email-item:hover {
+  background-color: #f0f0f0;
+}
+
+.inbox-container .email-item p {
+  margin: 5px 0;
+}
+
+.inbox-container .email-item strong {
+  color: #333;
+}
+
+.inbox-container .email-item .timestamp {
+  font-size: 0.9rem;
+  color: #777;
+}
+
+.inbox-container .no-emails-message {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #666;
+}
+/* Add to your global CSS file */
+button {
+  padding: 10px 20px;
+  background-color: #ff4c4c;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+button:hover {
+  background-color: #ff2a2a;
+}
+/* Style for navbar */
+.navbar {
+  margin-bottom: 20px;
+}
+
+.navbar .link {
+  color: #000; /* Default link color */
+  text-decoration: none; /* Remove underline */
+ padding: 4px 2px; ; /* Space around links */
+  font-size: 16px; /* Font size for the links */
+}
+
+.navbar .link:hover {
+  color: #007bff; /* Color change on hover */
+  text-decoration: underline; /* Underline on hover */
+}
+
+.navbar .link:active {
+  color: #0056b3; /* Color when clicked */
+}
+
+/* Make links more prominent by changing the background on hover */
+.navbar .link:hover {
+  background-color: #747678;
+  border-radius: 5px;
+}
+
+/* Style for the container */
+.container {
+  margin-top: 30px;
+}
+
+h1 {
+  font-size: 24px;
+  font-weight: 600;
+}
+
+
