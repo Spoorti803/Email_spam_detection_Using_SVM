@@ -1,4 +1,4 @@
-# 📧 AI-Powered Spam Detection Email Client
+# AI-Powered Spam Detection Email Client
 
 A full-stack email client that classifies incoming/outgoing emails as **spam or not spam** in real time using a machine learning model, built as part of my B.Tech coursework.
 
@@ -6,17 +6,17 @@ Unlike a standalone spam-classifier script, this project wires the ML model into
 
 ---
 
-## ✨ Features
+## Features
 
-- 🔐 User authentication (Signup/Login/Logout) via Firebase Auth
-- 📨 Send, receive, and view emails (Inbox, Sent, Spam folders)
-- 🤖 Real-time spam classification on every email sent, using a trained SVM model
-- ⚡ Live updates via Firestore listeners (no manual refresh needed)
-- 🎨 Clean, responsive UI
+- User authentication (Signup/Login/Logout) via Firebase Auth
+- Send, receive, and view emails (Inbox, Sent, Spam folders)
+- Real-time spam classification on every email sent, using a trained SVM model
+- Live updates via Firestore listeners (no manual refresh needed)
+- Clean, responsive UI
 
 ---
 
-## 🧠 How Spam Detection Works
+## How Spam Detection Works
 
 1. Email text is preprocessed (lowercased, special characters removed, stopwords removed via NLTK).
 2. The cleaned text is vectorized using **TF-IDF** (top 3000 features).
@@ -28,7 +28,7 @@ Unlike a standalone spam-classifier script, this project wires the ML model into
 
 ---
 
-## 🏗️ Architecture
+## Architecture
 
 ```
 ┌─────────────────┐        POST /send-email        ┌──────────────────────┐
@@ -48,7 +48,7 @@ Unlike a standalone spam-classifier script, this project wires the ML model into
 
 ---
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 **Frontend:** React, React Router, Firebase Auth SDK, Firebase Firestore SDK
 **Backend:** Flask, Flask-CORS, Firebase Admin SDK
@@ -56,7 +56,7 @@ Unlike a standalone spam-classifier script, this project wires the ML model into
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 ├── src/
@@ -91,7 +91,7 @@ Unlike a standalone spam-classifier script, this project wires the ML model into
 
 ---
 
-## 🚀 Getting Started
+## Getting Started
 
 ### Prerequisites
 - Node.js (v16+)
@@ -157,7 +157,7 @@ Run all cells — this starts the Flask server at `http://127.0.0.1:5002` and ke
 
 ---
 
-## 🔑 Environment Variables
+## Environment Variables
 
 This project currently has Firebase config hardcoded in `firebase.js` for simplicity during development. **Before making this public, rotate any exposed API keys in the Firebase Console** and switch to environment variables:
 
@@ -169,7 +169,7 @@ REACT_APP_FIREBASE_PROJECT_ID=...
 
 ---
 
-## ⚠️ Known Limitations & Future Improvements
+## Known Limitations & Future Improvements
 
 - **Model choice:** SVM + TF-IDF works well here (~99% accuracy) but doesn't capture context the way transformer-based models (e.g. a fine-tuned BERT/DistilBERT) would. A future version could compare both.
 - **Dataset size/diversity:** trained on SMS Spam Collection + Enron emails — a production system would need a larger, more diverse, and more recent dataset (spam patterns evolve).
@@ -180,6 +180,6 @@ REACT_APP_FIREBASE_PROJECT_ID=...
 
 ---
 
-## 📄 License
+## License
 
 This project was built for educational purposes as part of my B.E coursework. Feel free to fork and build on it.
