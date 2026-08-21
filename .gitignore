@@ -1,6 +1,7 @@
 # ---- Firebase / secrets ----
 firebase_credentials.json
 serviceAccountKey.json
+src/firebase.js
 *.pem
 .env
 .env.local
@@ -30,8 +31,8 @@ env/
 *.egg-info/
 .ipynb_checkpoints/
 
-# Trained model artifacts (optional — remove these lines if you WANT to commit the .pkl files)
-# *.pkl
+# Trained model artifacts (not committed — regenerate by running train_model1.ipynb)
+*.pkl
 
 # ---- OS / editor ----
 .DS_Store
