@@ -32,17 +32,17 @@ Unlike a standalone spam-classifier script, this project wires the ML model into
 
 ```
 ┌─────────────────┐        POST /send-email        ┌──────────────────────┐
-│   React Frontend │ ─────────────────────────────► │   Flask Backend       │
-│ (Login, Inbox,   │                                 │ (loads .pkl model +   │
-│  Sent, Spam, ...) │ ◄────────────────────────────  │  TF-IDF vectorizer)   │
-└─────────────────┘        spam prediction           └──────────┬───────────┘
-        │                                                        │
-        │ Firebase Auth (login state)                           │ writes email +
-        │                                                        │ isSpam flag
-        ▼                                                        ▼
+│   React Frontend│ ─────────────────────────────► │   Flask Backend      │
+│ (Login, Inbox,  │                                │ (loads .pkl model +  │
+│  Sent, Spam, ...)│ ◄──────────────────────────── │  TF-IDF vectorizer)  │
+└─────────────────┘        spam prediction         └──────────┬───────────┘
+        │                                                     │
+        │ Firebase Auth (login state)                         │ writes email +
+        │                                                     │ isSpam flag
+        ▼                                                     ▼
 ┌─────────────────────────────────────────────────────────────────────┐
-│                          Firebase Firestore                          │
-│                  (emails collection, queried by user)                │
+│                          Firebase Firestore                         │
+│                  (emails collection, queried by user)               │
 └─────────────────────────────────────────────────────────────────────┘
 ```
 
@@ -66,15 +66,15 @@ Unlike a standalone spam-classifier script, this project wires the ML model into
 │   │   ├── Inbox.js           # Non-spam received emails
 │   │   ├── Login.js
 │   │   ├── LogoutButton.js
-│   │   ├── NotFound.js
 │   │   ├── Sent.js            # Emails sent by the user
 │   │   ├── Signup.js
 │   │   ├── Spam.js            # Emails flagged isSpam: true
-│   │   └── addEmail.js
+│   │  
 │   ├── hooks/
 │   │   └── useAuth.js         # Auth context + hook
 │   ├── services/
 │   │   ├── auth.js            # signUp / signIn / logOut helpers
+|   |   ├── firestore.js 
 │   |
 │   ├── App.js                 # Routes
 │   ├── AuthContext.js
