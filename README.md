@@ -32,17 +32,17 @@ Unlike a standalone spam-classifier script, this project wires the ML model into
 
 ```
 ┌─────────────────┐        POST /send-email        ┌──────────────────────┐
-│   React Frontend │ ─────────────────────────────► │   Flask Backend       │
-│ (Login, Inbox,   │                                 │ (loads .pkl model +   │
-│  Sent, Spam, ...) │ ◄────────────────────────────  │  TF-IDF vectorizer)   │
-└─────────────────┘        spam prediction           └──────────┬───────────┘
-        │                                                        │
-        │ Firebase Auth (login state)                           │ writes email +
-        │                                                        │ isSpam flag
-        ▼                                                        ▼
+│   React Frontend│ ─────────────────────────────►│  Flask Backend       │
+│ (Login, Inbox,  │                               │ (loads .pkl model +  │
+│  Sent, Spam, ...)│ ◄────────────────────────────│  TF-IDF vectorizer)  │
+└─────────────────┘        spam prediction         └──────────┬───────────┘
+        │                                                     │
+        │ Firebase Auth (login state)                         │ writes email +
+        │                                                     │ isSpam flag
+        ▼                                                     ▼
 ┌─────────────────────────────────────────────────────────────────────┐
-│                          Firebase Firestore                          │
-│                  (emails collection, queried by user)                │
+│                          Firebase Firestore                         │
+│                  (emails collection, queried by user)               │
 └─────────────────────────────────────────────────────────────────────┘
 ```
 
