@@ -6,7 +6,7 @@ Unlike a standalone spam-classifier script, this project wires the ML model into
 
 ---
 
-## Features
+## ✨Features
 
 - User authentication (Signup/Login/Logout) via Firebase Auth
 - Send, receive, and view emails (Inbox, Sent, Spam folders)
@@ -16,7 +16,7 @@ Unlike a standalone spam-classifier script, this project wires the ML model into
 
 ---
 
-## How Spam Detection Works
+## 🧠How Spam Detection Works
 
 1. Email text is preprocessed (lowercased, special characters removed, stopwords removed via NLTK).
 2. The cleaned text is vectorized using **TF-IDF** (top 3000 features).
