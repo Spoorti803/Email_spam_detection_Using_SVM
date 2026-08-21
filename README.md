@@ -6,17 +6,17 @@ Unlike a standalone spam-classifier script, this project wires the ML model into
 
 ---
 
-## ✨ Features
+## Features
 
-- 🔐 User authentication (Signup/Login/Logout) via Firebase Auth
-- 📨 Send, receive, and view emails (Inbox, Sent, Spam folders)
-- 🤖 Real-time spam classification on every email sent, using a trained SVM model
-- ⚡ Live updates via Firestore listeners (no manual refresh needed)
-- 🎨 Clean, responsive UI
+- User authentication (Signup/Login/Logout) via Firebase Auth
+- Send, receive, and view emails (Inbox, Sent, Spam folders)
+- Real-time spam classification on every email sent, using a trained SVM model
+- Live updates via Firestore listeners (no manual refresh needed)
+- Clean, responsive UI
 
 ---
 
-## 🧠 How Spam Detection Works
+## How Spam Detection Works
 
 1. Email text is preprocessed (lowercased, special characters removed, stopwords removed via NLTK).
 2. The cleaned text is vectorized using **TF-IDF** (top 3000 features).
@@ -28,7 +28,7 @@ Unlike a standalone spam-classifier script, this project wires the ML model into
 
 ---
 
-## 🏗️ Architecture
+## Architecture
 
 ```
 ┌─────────────────┐        POST /send-email        ┌──────────────────────┐
